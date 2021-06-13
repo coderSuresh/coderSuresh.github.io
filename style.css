@@ -123,6 +123,7 @@ span {
         height: auto;
         text-align: center;
         display: flex;
+	margin: 5vh auto;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
