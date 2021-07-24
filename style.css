@@ -35,10 +35,6 @@ body {
   justify-content: space-evenly;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .responsive {
   padding: 0 6px;
   margin: 6px 0;
@@ -51,10 +47,13 @@ body {
 
     .desc {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .btn {
          margin: 10px 0;
+         width: fit-content;
     }
 }
 
@@ -80,32 +79,14 @@ body {
 .btn {
     background-color: #d4d2df;
     border-radius: 20px;
-    padding: 8px 20px;
     outline: none;
+    padding: 5px 0;
     border: none;
     color: #2C2E43;
     cursor: pointer;
     font-weight: bold;
 }
 
-.desc-text {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-    padding: 20px;
-    opacity: 0;
-    color: #d4d2df;
-}
-
-
-/*not working+
-.btn_desc:hover .desc-text {
-    opacity: 1;
-}
-
-.btn_desc:hover img {
-    opacity: 0.3;
+.desc a {
+      padding: 8px 20px;
 }
