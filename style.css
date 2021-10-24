@@ -1,92 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ruslan+Display&family=Sancreek&display=swap');
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     text-decoration: none;
+    color: var(--white);
+    font-family: 'Sancreek', cursive;
+    font-size: 1.125rem;
+    font-weight: normal;
 }
 
-a {
-    color: #2C2E43;
+ :root {
+    --white: #ffffff;
+    --white-opacity-low: rgba(255, 255, 255, 0.2);
+    --blue-overlay: rgba(4, 35, 81, 0.4);
+    --blue-overlay-full: rgba(4, 35, 81, 1);
+}
+
+html {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-size: 100%;
+}
+
+p {
+    line-height: 1.5;
 }
 
 body {
-    margin: 40px 5%;
-    background-color: #2C2E43;
+    min-height: 100vh;
+    background: linear-gradient(to left, var(--blue-overlay), var(--blue-overlay)), url('images/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-.gallery {
-  border: 1px solid #d4d2df;
-    background-color: #595260;
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.gallery:hover {
-  border: 1px solid #777;
+nav {
+    padding: 0 8%;
+    height: 5rem;
+    justify-content: space-between !important;
 }
 
-.gallery img {
-  width: 100%;
-  height: auto;
+.menu-icon,
+.close-icon {
+    display: none;
+}
+
+.menu a {
+    margin: 0 1.25rem;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    height: 0.125rem;
+    width: 0;
+    background: var(--white);
+    left: 0;
+    bottom: -0.625rem;
+    transition: .4s ease-in-out;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.logo {
+    font-size: 2.25rem;
+}
+
+main {
+    max-width: 1600px;
+    margin: 100px auto 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 2.5rem;
+    font-size: 2.25rem;
 }
 
 .desc {
-  padding: 15px;
-  text-align: center;
-  display: flex;
-  justify-content: space-evenly;
+    margin-bottom: 3.75rem;
+    max-width: 36.25rem;
+    padding: 10px;
 }
 
-.responsive {
-  padding: 0 6px;
-  margin: 6px 0;
-  float: left;
-  width: 33.33%;
-  position: relative;
+.countdown-container {
+    flex-wrap: wrap;
 }
 
-@media (max-width: 980px) {
-
-    .desc {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .btn {
-         margin: 10px 0;
-         width: fit-content;
-    }
-}
-
-@media (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.btn {
-    background-color: #d4d2df;
-    border-radius: 20px;
-    outline: none;
-    padding: 5px 0;
-    border: none;
-    color: #2C2E43;
+.countdown {
+    height: 8.125rem;
+    width: 10rem;
+    background: var(--white-opacity-low);
+    border-radius: 0.625rem;
+    margin: 0 1.25rem;
     cursor: pointer;
-    font-weight: bold;
 }
 
-.desc a {
-      padding: 8px 20px;
+.footer {
+    width: 100%;
+    height: 2.5rem;
+    position: fixed;
+    bottom: 0;
+    background: var(--blue-overlay);
+    align-items: center;
+}
+
+.view-source {
+    position: relative;
+}
+
+.view-source::after {
+    content: '';
+    position: absolute;
+    height: 0.125rem;
+    width: 100%;
+    background: var(--white);
+    left: 0;
+    bottom: 0;
+}
+
+@media (max-width: 950px) {
+    html {
+        font-size: 70%;
+    }
+    .countdown {
+        width: 8.125rem;
+        height: 8.125rem;
+    }
+}
+
+@media (max-width:768px) {
+    .desc {
+        margin-bottom: 0;
+    }
+    .countdown {
+        margin-top: 2.5rem;
+    }
+    #menu {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--blue-overlay-full);
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: .3s ease-in-out;
+    }
+    .menu a {
+        margin-top: 20px;
+    }
+    .menu-icon,
+    .close-icon {
+        display: block;
+        font-size: 2rem;
+    }
+    .close-icon {
+        right: 2.5rem;
+        margin-top: 1.25rem;
+        position: absolute;
+    }
+}
+
+@media (max-width:335px) {
+    html {
+        font-size: 60%;
+    }
+    footer p,
+    footer a {
+        font-size: 0.873rem;
+    }
 }
