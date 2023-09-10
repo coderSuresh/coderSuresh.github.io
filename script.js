@@ -1,19 +1,19 @@
-var day = document.querySelector(".days");
-var hour = document.querySelector(".hours");
-var minute = document.querySelector(".minutes");
-var second = document.querySelector(".seconds");
+const day = document.querySelector(".days");
+const hour = document.querySelector(".hours");
+const minute = document.querySelector(".minutes");
+const second = document.querySelector(".seconds");
 
-var x = setInterval(function() {
+const x = setInterval(function() {
 
-    var launchDate = new Date("Jun 13, 2023 12:00:00").getTime();
-    var currentDate = new Date().getTime();
+    const launchDate = new Date("Jun 13, 2024 12:00:00").getTime();
+    const currentDate = new Date().getTime();
 
-    var timeDiff = launchDate - currentDate;
+    const timeDiff = launchDate - currentDate;
 
-    var days = Math.floor((timeDiff / (1000 * 60 * 60 * 24)));
-    var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    const days = Math.floor((timeDiff / (1000 * 60 * 60 * 24)));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
     day.innerHTML = days + "<br>Days";
     hour.innerHTML = hours + "<br>Hours";
@@ -24,7 +24,7 @@ var x = setInterval(function() {
 
 // for mobile menu 
 
-var menu = document.getElementById('menu');
+const menu = document.getElementById('menu');
 
 function openMenu() {
     menu.style.left = "0";
