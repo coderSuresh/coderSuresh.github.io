@@ -5,7 +5,7 @@ const second = document.querySelector(".seconds");
 
 const x = setInterval(function() {
 
-    const launchDate = new Date("Jun 13, 2024 12:00:00").getTime();
+    const launchDate = new Date("Jun 13, 2025 00:00:00").getTime();
     const currentDate = new Date().getTime();
 
     const timeDiff = launchDate - currentDate;
